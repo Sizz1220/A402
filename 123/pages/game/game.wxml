@@ -1,0 +1,37 @@
+<view class="container">
+  <view class="game-info">
+    <view class="score">得分: {{score}}</view>
+    <view class="time">时间: {{timeLeft}}秒</view>
+  </view>
+  
+  <view class="game-board">
+    <view class="grid-container">
+      <view class="grid-row" wx:for="{{[0, 1, 2]}}" wx:for-item="row" wx:key="row">
+        <view class="grid-cell" 
+              wx:for="{{[0, 1, 2]}}" 
+              wx:for-item="col" 
+              wx:key="col"
+              bindtap="tapHole" 
+              data-index="{{row * 3 + col}}">
+          <view class="hole">
+            <image class="mole {{activeMoles[row * 3 + col].show ? '' : 'hidden'}}" 
+                   src="{{activeMoles[row * 3 + col].type === 'mole' ? '/images/mole.png' : '/images/bomb.png'}}"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <view class="controls">
+    <button class="btn" bindtap="restartGame" wx:if="{{gameOver}}">重新开始</button>
+    <button class="btn" bindtap="backToHome" wx:if="{{gameOver}}">返回首页</button>
+  </view>
+  
+  <view class="game-over-modal" wx:if="{{gameOver}}">
+    <view class="modal-content">
+      <view class="modal-title">游戏结束</view>
+      <view class="final-score">最终得分: {{score}}</view>
+      <view class="high-score" wx:if="{{isNewHighScore}}">新的最高分！</view>
+    </view>
+  </view>
+</view> 

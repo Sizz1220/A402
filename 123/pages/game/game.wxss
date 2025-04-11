@@ -1,0 +1,126 @@
+.container {
+  padding: 20rpx;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.game-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20rpx 0;
+  margin-bottom: 20rpx;
+}
+
+.score, .time {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.time {
+  color: #e74c3c;
+}
+
+.game-board {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.grid-container {
+  width: 600rpx;
+  height: 600rpx;
+  background-color: #8B4513;
+  border-radius: 20rpx;
+  padding: 20rpx;
+  box-shadow: 0 8rpx 16rpx rgba(0, 0, 0, 0.2);
+}
+
+.grid-row {
+  display: flex;
+  height: 33.33%;
+}
+
+.grid-cell {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 10rpx;
+}
+
+.hole {
+  width: 80%;
+  height: 80%;
+  background-color: #111;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.mole {
+  width: 90%;
+  height: 90%;
+  transition: transform 0.1s ease-out;
+}
+
+.mole.hidden {
+  transform: translateY(100%);
+}
+
+.controls {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30rpx;
+  width: 100%;
+}
+
+.game-over-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal-content {
+  width: 80%;
+  background-color: white;
+  border-radius: 20rpx;
+  padding: 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-title {
+  font-size: 48rpx;
+  font-weight: bold;
+  margin-bottom: 40rpx;
+  color: #333;
+}
+
+.final-score {
+  font-size: 42rpx;
+  margin-bottom: 20rpx;
+}
+
+.high-score {
+  font-size: 36rpx;
+  color: #f39c12;
+  font-weight: bold;
+  margin-bottom: 40rpx;
+} 
